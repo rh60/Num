@@ -1,6 +1,8 @@
-%%y2'=-1/y1',y1(x)=y2(x)=y(x)
+%%
+% y2'=-1/y1',y1(x)=y2(x)=y(x)
 % y=a*x^2, a=y*x^(-2)
 % y'=-1/(2*a*x)=-1/2*x/y
+
 syms a y(x)
 eqn = diff(y,x) == -x/(2*y);
 y=dsolve(eqn);
@@ -12,10 +14,10 @@ clear;clc;close;
 
 x = linspace(-1,1);
 hold on
-for a=-10:1:10
+for a=-3:0.3:3
     y = @(x) a*x.^2;
     plot(x,y(x),'k')
-end;
+end
 axis([-1, 1, -1, 1]);
 axis equal
 [X,Y] = meshgrid(x,x);
